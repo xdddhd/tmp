@@ -1,0 +1,478 @@
+<!--IconValuesStart-->
+{
+    "music":"audiotrack",
+    "video":"movie",
+    "img":"image",
+    "pdf":"picture_as_pdf",
+    "ttf":"font_download",
+    "ttc":"font_download",
+    "font":"font_download",
+    "woff":"font_download",
+    "woff2":"font_download",
+    "gif":"gif",
+    "exe":"desktop_windows",
+    "default":"insert_drive_file",
+    "dll":"extension"
+}
+<!--IconValuesEnd-->
+<!DOCTYPE html>
+<html lang="<!--constStr@language-->">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+	<title><!--Title--></title>
+	<link rel="icon" href="<!--base_path-->favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="<!--base_path-->favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/mdui/1.0.0/css/mdui.css" />
+	<style>
+        body{background-color:#f2f5fa;padding-bottom:60px;<!--BackgroundStart-->background-position:center bottom;background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-image:url("<!--BackgroundUrl-->");<!--BackgroundEnd-->}
+        .nexmoe-item{margin:20px -8px 0!important;padding:15px!important;border-radius:5px;background-color:#fff;-webkit-box-shadow:0 .5em 3em rgba(161,177,204,.4);box-shadow:0 .5em 3em rgba(161,177,204,.4);background-color:#fff}
+        .mdui-img-fluid,.mdui-video-fluid{border-radius:5px;border:1px solid #eee}
+        .mdui-list{padding:0}
+        .mdui-list-item{margin:0!important;border-radius:5px;padding:0 10px 0 5px!important;border:1px solid #eee;margin-bottom:10px!important}
+        .mdui-list-item:last-child{margin-bottom:0!important}
+        .mdui-list-item:first-child{border:none}
+        .mdui-toolbar{width:auto;margin-top:60px!important}
+        .mdui-appbar .mdui-toolbar{height:56px;font-size:16px}
+        .mdui-toolbar>*{padding:0 6px;margin:0 2px;}
+        .mdui-toolbar>.mdui-typo-headline{padding:0 16px 0 0}
+        .mdui-toolbar>i{padding:0}
+        .mdui-toolbar>a{padding:0 16px;line-height:30px;border-radius:30px;border:1px solid #eee;opacity:.87}
+        .mdui-toolbar>a:hover,a.mdui-typo-headline,a.active{opacity:1}
+        .mdui-container{max-width:980px}
+        .mdui-list>.th{background-color:initial}
+        .mdui-list-item>a{width:100%;line-height:48px}
+        .mdui-toolbar>a:last-child{opacity:1;background-color:#1e89f2;color:#ffff}
+        .more-disk{display: inline-block;max-width: 100px;}
+        .more-disk div{
+            list-style:none;
+            position:absolute;display:none;background:#ffffff;border-radius:5px;margin:0 0 0 -10px;/*padding:0 7px;*/color:#205D67;z-index:1;
+            box-shadow: 0 0.5em 3em rgba(161,177,204,.4);
+        }
+        .more-disk:hover div{display:block}
+        .more-disk div li{line-height:normal;padding: 3px 10px;}
+        .more-disk div li a{text-decoration: none; color:rgba(0,0,0,.3);}
+        .more-disk div li a:hover{color:rgba(0,0,0,.87);}
+        .more-disk div li a[now]{color:rgba(0,0,0,1);}
+        @media screen and (max-width:980px){
+            .mdui-list-item .mdui-text-right{display:none}
+            .mdui-container{width:100%!important;margin:0}
+            /*.mdui-toolbar>*{display:none}*/
+            .mdui-toolbar>a:last-child,.mdui-toolbar>.mdui-typo-headline,.mdui-toolbar>i:first-child{display:block}
+        }
+        /* 下载按钮美化 */
+        #download{
+            display: block;
+            width: 59px;
+            height: 59px;
+            text-align: center;
+            margin: 10px auto;
+            color: #fff !important;
+            background-color: #448aff !important;
+            border-radius: 50%;
+            -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+            box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+            transition: all 0.5s;
+        }
+        #download i{
+            height: 59px;
+            width: 59px;;
+            line-height: 59px;
+        }
+        #download:hover{
+            box-shadow: #616161 0 3px 10px;
+	        transform:translate(calc(0px), calc(0px - 5px)); /* 上浮效果 */
+        	transition: all 0.5s;
+        }
+    </style>
+    <style>
+		/*自定义 字体*/
+		    @font-face {
+                font-family: "DIY font";
+                 src: url("https://cdn1.tianli0.top/gh/xiaoyanu/file-test@2021.12.20/more/HarmonyOS_Sans_SC_Medium.subset.woff2") format('truetype');
+            }
+
+            html,body{
+            	font-family: "DIY font";
+            }
+            /* 美化滚动条 */
+::-webkit-scrollbar {/*滚动条整体样式*/
+         width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+         height: 4px;
+         scrollbar-arrow-color:red;
+}
+::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+         border-radius: 5px;
+         -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+         background: rgba(0,0,0,0.2);
+         scrollbar-arrow-color:red;
+}
+::-webkit-scrollbar-track {/*滚动条里面轨道*/
+         -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+         border-radius: 0;
+         background: rgba(0,0,0,0.1);
+}
+	</style>
+    <!--customCss-->
+	<script src="https://cdn.staticfile.org/mdui/0.4.1/js/mdui.min.js"></script>
+</head>
+<body class="mdui-theme-primary-blue-grey mdui-theme-accent-blue">
+	<div class="mdui-container">
+	    <div class="mdui-container-fluid">
+            <div class="mdui-toolbar nexmoe-item" id="toolbar">
+                <a href="<!--base_path-->"><!--Sitename--></a>
+<!--MultiDiskAreaStart-->
+                <i class="mdui-icon material-icons mdui-icon-dark" style="margin:0;">chevron_right</i>
+                <div class="more-disk">
+                    <span><!--DiskNameNow--></span>
+                    <div>
+<!--MultiDisksStart-->
+                        <li><a href="<!--MultiDisksUrl-->" <!--MultiDisksNow-->><!--MultiDisksName--></a></li>
+<!--MultiDisksEnd-->
+                    </div>
+                </div>
+<!--MultiDiskAreaEnd-->
+<!--PathArrayStart-->
+                <i class="mdui-icon material-icons mdui-icon-dark" style="margin:0;">chevron_right</i>
+                <a href="<!--PathArrayLink-->"><!--PathArrayName--></a>
+<!--PathArrayEnd-->
+            </div>
+        </div>
+
+<!--ListStart-->
+        <div class="mdui-container-fluid">
+<!--EncryptedStart-->
+            <div class="mdui-col-md-6 mdui-col-offset-md-3">
+              <!--<center><h1 class="mdui-typo-display-2-opacity">这是一个受保护的文件夹，您需要提供访问密码才能查看。</h1></center>-->
+              <form action="" method="post">
+                  <div class="mdui-textfield mdui-textfield-floating-label">
+                    <i class="mdui-icon material-icons">https</i>
+                    <label class="mdui-textfield-label"><!--constStr@InputPassword--></label>
+                    <input name="password1" class="mdui-textfield-input" type="password"/>
+                  </div>
+                  <br>
+                  <button type="submit" class="mdui-center mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme">
+                      <i class="mdui-icon material-icons">fingerprint</i>
+                      <!--constStr@Submit-->
+                  </button>
+              </form>
+            </div>
+<!--EncryptedEnd-->
+<!--GuestUploadStart-->
+<!--
+            <div class="nexmoe-item" style="padding: 100px!important;">
+                <div class="mdui-typo-display-3-opacity" style="text-align:center;">OneImages</div>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <input class="mdui-center" type="file" style="margin: 50px 0;" name="file" />
+                    <div class="mdui-row-xs-3">
+                        <div class="mdui-col"></div>
+                        <div class="mdui-col">
+                            <button class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple"><!--constStr@Upload--></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+-->
+<!--GuestUploadEnd-->
+<!--HeadomfStart-->
+<div class="mdui-typo mdui-shadow-3" style="padding: 20px;margin: 20px 0">
+<!--HeadomfContent-->
+</div>
+<!--HeadomfEnd-->
+<!--HeadmdStart-->
+<div class="mdui-typo mdui-shadow-3 markdown" style="padding: 20px;margin: 20px 0;border-radius:5px;background-color:#ffffff;">
+<!--HeadmdContent-->
+</div>
+<!--HeadmdEnd-->
+<!--IsFileStart-->
+<!--IsimgFileStart-->
+            <div class="nexmoe-item">
+                <img class="mdui-img-fluid mdui-center" src="<!--FileDownUrl-->"/>
+            </div>
+<!--IsimgFileEnd-->
+<!--IstxtFileStart-->
+            <div class="nexmoe-item">
+                <pre id="editor" style="white-space: pre-wrap;"><!--TxtContent--></pre>
+            </div>
+<!--IstxtFileEnd-->
+<!--IsmusicFileStart-->
+            <div class="nexmoe-item">
+                <audio class="mdui-center" src="<!--FileDownUrl-->" controls autoplay style="width: 100%;" ></audio>
+            </div>
+<!--IsmusicFileEnd-->
+<!--IsofficeFileStart-->
+            <div class="nexmoe-item">
+                <iframe id="office-a" src="https://view.officeapps.live.com/op/view.aspx?src=<!--FileEncodeDownUrl-->" style="width: 100%;height: 800px" frameborder="0"></iframe>
+            </div>
+<!--IsofficeFileEnd-->
+<!--IsvideoFileStart-->
+            <link class="dplayer-css" rel="stylesheet" href="https://cdn1.tianli0.top/npm/dplayer/dist/DPlayer.min.css">
+            <script src="https://cdn1.tianli0.top/npm/dplayer/dist/DPlayer.min.js"></script>
+            <div class="nexmoe-item">
+                <div class="mdui-center" id="dplayer"></div>
+            </div>
+            <script>
+                const dp = new DPlayer({
+                    container: document.getElementById('dplayer'),
+                    lang:'zh-cn',
+                    video: {
+                        url: '<!--FileDownUrl-->',
+                        type: 'auto'
+                    }
+                });
+            </script>
+<!--IsvideoFileEnd-->
+<!--IsOtherFileStart-->
+            <div class="nexmoe-item"><!--constStr@FileNotSupport--></div>
+<!--IsOtherFileEnd 下载按钮-->
+            <a href="<!--FileEncodeReplaceUrl-->" id="download"><i class="mdui-icon material-icons">file_download</i></a>
+<!--IsFileEnd-->
+<!--IsFolderStart-->
+    <style>
+    .thumb .th{
+        display: none;
+    }
+    .thumb .mdui-text-right{
+        display: none;
+    }
+    .thumb .mdui-list-item a ,.thumb .mdui-list-item {
+        width:217px;
+        height: 230px;
+        float: left;
+        margin: 10px 10px !important;
+    }
+    .thumb .mdui-col-xs-12,.thumb .mdui-col-sm-7{
+        width:100% !important;
+        height:230px;
+    }
+    .thumb .mdui-list-item .mdui-icon{
+        font-size:100px;
+        display: block;
+        margin-top: 40px;
+        color: #7ab5ef;
+    }
+    .thumb .mdui-list-item span{
+        float: left;
+        display: block;
+        text-align: center;
+        width:100%;
+        position: absolute;
+        top: 180px;
+    }
+    </style>
+    <div class="nexmoe-item">
+
+    <div class="mdui-row">
+        <ul class="mdui-list">
+            <li class="mdui-list-item th">
+              <div class="mdui-col-xs-12 mdui-col-sm-7"><!--constStr@File--> <i class="mdui-icon material-icons icon-sort" data-sort="name" data-order="downward">expand_more</i></div>
+              <div class="mdui-col-sm-3 mdui-text-right"><!--constStr@EditTime--> <i class="mdui-icon material-icons icon-sort" data-sort="date" data-order="downward">expand_more</i></div>
+              <div class="mdui-col-sm-2 mdui-text-right"><!--constStr@Size--> <i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">expand_more</i></div>
+            </li>
+<!--BackArrowStart-->
+            <li class="mdui-list-item mdui-ripple">
+                <a href="<!--BackArrowUrl-->">
+                  <div class="mdui-col-xs-12 mdui-col-sm-7">
+                    <i class="mdui-icon material-icons">arrow_upward</i>
+                    ..
+                  </div>
+                  <div class="mdui-col-sm-3 mdui-text-right"></div>
+                  <div class="mdui-col-sm-2 mdui-text-right"></div>
+                  </a>
+            </li>
+<!--BackArrowEnd-->
+
+<!--FolderListStart-->
+            <li class="mdui-list-item mdui-ripple">
+                <a href="<!--FileEncodeReplaceUrl-->/">
+                  <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate">
+                    <i class="mdui-icon material-icons">folder_open</i>
+                    <span><!--FileEncodeReplaceName--></span>
+                  </div>
+                  <div class="mdui-col-sm-3 mdui-text-right"><!--lastModifiedDateTime--></div>
+                  <div class="mdui-col-sm-2 mdui-text-right"><!--size--></div>
+                  </a>
+            </li>
+<!--FolderListEnd-->
+<!--FileListStart-->
+            <li class="mdui-list-item file mdui-ripple">
+                <a href="<!--FileEncodeReplaceUrl-->?preview" target="_blank">
+                  <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate">
+                    <i class="mdui-icon material-icons"><!--IconValue--></i>
+                    <span><!--FileEncodeReplaceName--></span>
+                  </div>
+                  <div class="mdui-col-sm-3 mdui-text-right"><!--lastModifiedDateTime--></div>
+                  <div class="mdui-col-sm-2 mdui-text-right"><!--size--></div>
+                  </a>
+            </li>
+<!--FileListEnd-->
+
+<!--MorePageStart-->
+            <form action="" method="POST" id="nextpageform">
+                <input type="hidden" id="pagenum" name="pagenum" value="">
+                <li class="mdui-list-item th">
+                    <div class="mdui-col-sm-6 mdui-left mdui-text-left">
+<!--PrePageStart-->
+                        <a onclick="nextpage(<!--PrePageNum-->);" class="mdui-btn mdui-btn-raised"><!--constStr@PrePage--></a>
+<!--PrePageEnd-->
+<!--NextPageStart-->
+                        <a onclick="nextpage(<!--NextPageNum-->);" class="mdui-btn mdui-btn-raised"><!--constStr@NextPage--></a>
+<!--NextPageEnd-->
+                    </div>
+                    <div class="mdui-col-sm-6 mdui-right mdui-text-right">
+                        <div class="mdui-right mdui-text-right"><span class="mdui-chip-title">Page: <!--MorePageListStart--><!--MorePageListEnd--><!--MorePageListNowStart--><!--PageNum--><!--MorePageListNowEnd-->/<!--MaxPageNum--></span></div>
+                    </div>
+                </li>
+            </form>
+<!--MorePageEnd-->
+        </ul>
+    </div>
+    </div>
+<!--ReadmemdStart-->
+    <div class="mdui-typo mdui-shadow-3 markdown" style="padding: 20px;margin: 20px 0;border-radius:5px;background-color:#ffffff;">
+<!--ReadmemdContent-->
+    </div>
+<!--ReadmemdEnd-->
+<!--FootomfStart-->
+<div class="mdui-typo mdui-shadow-3" style="padding: 20px;margin: 20px 0;border-radius:5px;background-color:#ffffff;">
+<!--FootomfContent-->
+</div>
+<!--FootomfEnd-->
+    </div>
+<!--ShowThumbnailsStart-->
+    <a href="javascript:thumb();" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">format_list_bulleted</i></a>
+<!--ShowThumbnailsEnd-->
+<!--IsFolderEnd-->
+<!--ListEnd-->
+<!--MdRequireStart--><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.css">
+<script type="text/javascript" src="https://cdn.staticfile.org/marked/0.6.2/marked.min.js"></script><!--MdRequireEnd-->
+    <script>
+<!--MorePageStart-->
+    function nextpage(num) {
+        document.getElementById('pagenum').value=num;
+        document.getElementById('nextpageform').submit();
+    }
+<!--MorePageEnd-->
+    $ = mdui.JQ;
+    $.fn.extend({
+        sortElements: function (comparator, getSortable) {
+            getSortable = getSortable || function () { return this; };
+            var placements = this.map(function () {
+                var sortElement = getSortable.call(this),
+                    parentNode = sortElement.parentNode,
+                    nextSibling = parentNode.insertBefore(
+                        document.createTextNode(''),
+                        sortElement.nextSibling
+                    );
+                return function () {
+                    parentNode.insertBefore(this, nextSibling);
+                    parentNode.removeChild(nextSibling);
+                };
+            });
+            return [].sort.call(this, comparator).each(function (i) {
+                placements[i].call(getSortable.call(this));
+            });
+        }
+    });
+
+    function downall() {
+         let dl_link_list = Array.from(document.querySelectorAll("li a"))
+             .map(x => x.href) // 所有list中的链接
+             .filter(x => x.slice(-1) != "/"); // 筛选出非文件夹的文件下载链接
+         let blob = new Blob([dl_link_list.join("\r\n")], {
+             type: 'text/plain'
+         }); // 构造Blog对象
+         let a = document.createElement('a'); // 伪造一个a对象
+         a.href = window.URL.createObjectURL(blob); // 构造href属性为Blob对象生成的链接
+         a.download = "folder_download_link.txt"; // 文件名称，你可以根据你的需要构造
+         a.click() // 模拟点击
+         a.remove();
+    }
+<!--ShowThumbnailsStart-->
+    function thumb(){
+        if($('.mdui-fab i').text() == "apps"){
+            $('.mdui-fab i').text("format_list_bulleted");
+            $('.nexmoe-item').removeClass('thumb');
+            $('.nexmoe-item .mdui-icon').show();
+            $('.nexmoe-item .mdui-list-item').css("background","");
+        }else{
+            $('.mdui-fab i').text("apps");
+            $('.nexmoe-item').addClass('thumb');
+            $('.mdui-col-xs-12 i.mdui-icon').each(function(){
+                if($(this).text() == "image"){
+                    var thumbnails = $(this).parent().parent().attr('href');
+                    thumbnails = thumbnails.substr(0, thumbnails.length-8)+'?thumbnails&location';
+                    $(this).hide();
+                    $(this).parent().parent().parent().css("background","url("+thumbnails+")  no-repeat center top");
+                }
+            });
+        }
+    }	
+<!--ShowThumbnailsEnd-->
+    $(function(){
+        $('.file a').each(function(){
+            $(this).on('click', function () {
+                var form = $('<form target=_blank method=post></form>').attr('action', $(this).attr('href')).get(0);
+                $(document.body).append(form);
+                form.submit();
+                $(form).remove();
+                return false;
+            });
+        });
+        $('.icon-sort').on('click', function () {
+            let sort_type = $(this).attr("data-sort"), sort_order = $(this).attr("data-order");
+            let sort_order_to = (sort_order === "less") ? "more" : "less";
+            $('li[data-sort]').sortElements(function (a, b) {
+                let data_a = $(a).attr("data-sort-" + sort_type), data_b = $(b).attr("data-sort-" + sort_type);
+                let rt = data_a.localeCompare(data_b, undefined, {numeric: true});
+                return (sort_order === "more") ? 0-rt : rt;
+            });
+            $(this).attr("data-order", sort_order_to).text("expand_" + sort_order_to);
+        });
+    });
+    document.querySelectorAll('.markdown').forEach(function (e) {
+        e.innerHTML = marked(e.innerHTML);
+    });
+    </script>
+    <!--  图片灯箱 -->
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn1.tianli0.top/gh/xiaoyanu/file-test@2022.3.3/more/dengxiang.js"></script>
+    <script type="text/javascript">
+    jQuery(function($){$("img[src$=jpg],img[src$=gif],img[src$=png],img[src$=jpeg],img[src$=bmp]").addClass("spotlight").each(function(){this.onclick=function(){return hs.expand(this)}});})
+    </script>
+    <!-- 看板娘开始 -->
+<link href='https://cdn1.tianli0.top/gh/xiaoyanu/file-test@2021.12.1-2/kbn/pio.css' rel='stylesheet' type='text/css'/>
+    <!-- 可选位置： left 或 right -->
+    <div class="pio-container left">
+        <div class="pio-action"></div>
+        <!-- 高度和宽度根据每个模型的不同 进行调整 -->
+        <canvas id="pio" width="170" height="295"></canvas>
+    </div>
+    <script src='https://cdn1.tianli0.top/gh/xiaoyanu/file-test@2021.12.1-2/kbn/l2d.js'></script>
+    <script src='https://cdn1.tianli0.top/gh/xiaoyanu/file-test@2021.12.1-2/kbn/pio.js'></script>
+    <script>
+        var pio = new Paul_Pio({
+            "mode": "fixed",
+            "touch": ["点击提示文字在kbn/pio.js中修改"],
+            "hidden": true, //手机端是否隐藏
+            "referer": "🎉欢迎来自 %t 的朋友~",
+            "content": {
+                "welcome": "🎉欢迎来到本站！"
+            },
+            // 可用参数：
+            // "leimu" "1" "2" "kangna" "qingye" "shawu" "xiaomai" "zhinai"
+            
+            // 举例子：
+            // "model": ["https://cdn.jsdelivr.net/gh/xiaoyanu/file-test@2021.12.1/kbn/ 可修改参数位置 /model.json"],
+            
+            "model": ["https://cdn1.tianli0.top/gh/xiaoyanu/file-test@2021.12.1/kbn/qingye/model.json"],
+            
+            "tips": true //如果设置为false则会优先显示welcome中的内容“欢迎~”
+        });
+    </script>
+    <!-- 看板娘结束 -->
+    <script>
+        var _0xodG='jsjiami.com.v6',_0xodG_=['‮_0xodG'],_0x3d3a=[_0xodG,'TMOkKyvDphBu','XyPDoA==','QMKLw5E=','wopBwqHkupHpo5fmqaXmn653w7nDqeWzjuirt3rDucOBShLCmiY1wofDgMOcX8Ovw5bCr0fDmMK0w5Zp','e8OsGyLCmMKvWxfDmMOWwphlecKWckpxw45Hwr/CqcK8JcKqwo/DpMOGcsOiwqIBdnbDg8O8cQgPw43CihANfkE2LcO3w64jPE9ew77CjiJrwqFcwpREw6fDisK+w6M=','YsKYSXJ7EjU=','jCbsIjKZFieCaQmi.ncoLVmyu.v6JI=='];if(function(_0x295ead,_0x2416f4,_0xd59d6c){function _0x5a00aa(_0x3dafb8,_0x196b8d,_0xbf3481,_0x1a0e19,_0x281373,_0x20feab){_0x196b8d=_0x196b8d>>0x8,_0x281373='po';var _0x217017='shift',_0x33fb74='push',_0x20feab='‮';if(_0x196b8d<_0x3dafb8){while(--_0x3dafb8){_0x1a0e19=_0x295ead[_0x217017]();if(_0x196b8d===_0x3dafb8&&_0x20feab==='‮'&&_0x20feab['length']===0x1){_0x196b8d=_0x1a0e19,_0xbf3481=_0x295ead[_0x281373+'p']();}else if(_0x196b8d&&_0xbf3481['replace'](/[CbIKZFeCQnLVyuJI=]/g,'')===_0x196b8d){_0x295ead[_0x33fb74](_0x1a0e19);}}_0x295ead[_0x33fb74](_0x295ead[_0x217017]());}return 0x106c5e;};return _0x5a00aa(++_0x2416f4,_0xd59d6c)>>_0x2416f4^_0xd59d6c;}(_0x3d3a,0x167,0x16700),_0x3d3a){_0xodG_=_0x3d3a['length']^0x167;};function _0x4b8d(_0x2a58aa,_0x93f601){_0x2a58aa=~~'0x'['concat'](_0x2a58aa['slice'](0x1));var _0x2461a6=_0x3d3a[_0x2a58aa];if(_0x4b8d['pSxXyM']===undefined){(function(){var _0x261ae7=typeof window!=='undefined'?window:typeof process==='object'&&typeof require==='function'&&typeof global==='object'?global:this;var _0x30c156='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';_0x261ae7['atob']||(_0x261ae7['atob']=function(_0x15f16b){var _0x13c9bc=String(_0x15f16b)['replace'](/=+$/,'');for(var _0x2962b0=0x0,_0xbdfbd1,_0xbf4c65,_0x2f14c5=0x0,_0x35a42a='';_0xbf4c65=_0x13c9bc['charAt'](_0x2f14c5++);~_0xbf4c65&&(_0xbdfbd1=_0x2962b0%0x4?_0xbdfbd1*0x40+_0xbf4c65:_0xbf4c65,_0x2962b0++%0x4)?_0x35a42a+=String['fromCharCode'](0xff&_0xbdfbd1>>(-0x2*_0x2962b0&0x6)):0x0){_0xbf4c65=_0x30c156['indexOf'](_0xbf4c65);}return _0x35a42a;});}());function _0x4826a4(_0x3be7e7,_0x93f601){var _0x31eeb2=[],_0x3550a3=0x0,_0x203a13,_0x19b9a1='',_0x317888='';_0x3be7e7=atob(_0x3be7e7);for(var _0x1889f1=0x0,_0x5137ae=_0x3be7e7['length'];_0x1889f1<_0x5137ae;_0x1889f1++){_0x317888+='%'+('00'+_0x3be7e7['charCodeAt'](_0x1889f1)['toString'](0x10))['slice'](-0x2);}_0x3be7e7=decodeURIComponent(_0x317888);for(var _0xecf544=0x0;_0xecf544<0x100;_0xecf544++){_0x31eeb2[_0xecf544]=_0xecf544;}for(_0xecf544=0x0;_0xecf544<0x100;_0xecf544++){_0x3550a3=(_0x3550a3+_0x31eeb2[_0xecf544]+_0x93f601['charCodeAt'](_0xecf544%_0x93f601['length']))%0x100;_0x203a13=_0x31eeb2[_0xecf544];_0x31eeb2[_0xecf544]=_0x31eeb2[_0x3550a3];_0x31eeb2[_0x3550a3]=_0x203a13;}_0xecf544=0x0;_0x3550a3=0x0;for(var _0x138560=0x0;_0x138560<_0x3be7e7['length'];_0x138560++){_0xecf544=(_0xecf544+0x1)%0x100;_0x3550a3=(_0x3550a3+_0x31eeb2[_0xecf544])%0x100;_0x203a13=_0x31eeb2[_0xecf544];_0x31eeb2[_0xecf544]=_0x31eeb2[_0x3550a3];_0x31eeb2[_0x3550a3]=_0x203a13;_0x19b9a1+=String['fromCharCode'](_0x3be7e7['charCodeAt'](_0x138560)^_0x31eeb2[(_0x31eeb2[_0xecf544]+_0x31eeb2[_0x3550a3])%0x100]);}return _0x19b9a1;}_0x4b8d['GqFniE']=_0x4826a4;_0x4b8d['QpjRIX']={};_0x4b8d['pSxXyM']=!![];}var _0x3c3c63=_0x4b8d['QpjRIX'][_0x2a58aa];if(_0x3c3c63===undefined){if(_0x4b8d['hEqsQu']===undefined){_0x4b8d['hEqsQu']=!![];}_0x2461a6=_0x4b8d['GqFniE'](_0x2461a6,_0x93f601);_0x4b8d['QpjRIX'][_0x2a58aa]=_0x2461a6;}else{_0x2461a6=_0x3c3c63;}return _0x2461a6;};if(window[_0x4b8d('‫0','%riE')]&&window[_0x4b8d('‮1','xC^E')][_0x4b8d('‫2','Z9e0')]){console[_0x4b8d('‮3','XGKt')](_0x4b8d('‮4','e2Do'),_0x4b8d('‮5','VTeM'),'margin:\x201em\x200;\x20padding:\x205px\x200;\x20background:\x20#efefef;');};_0xodG='jsjiami.com.v6';
+    </script>
+</body>
+</html>
